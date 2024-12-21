@@ -1,0 +1,71 @@
+<head>
+  <link rel="stylesheet" href="/styles/home-page.css" />
+</head>
+<div class="container mt-4 p-4" style="border: 2px solid rgba(81, 79, 79, 0.461) ; border-radius: 15px; ">
+<h1>Edit My Profile</h1>
+<form action="profile-edit" method="post" enctype="multipart/form-data">
+  <div class="mb-3 d-flex">
+    <p class="form-label">Username:</p>
+    <p class="form-label ms-3">{{currentUser.username}}</p>
+  </div>
+
+   <div class="mb-3">
+    <label for="image" class="form-label">Imagen de perfil</label>
+    <input class="form-control {{#if errors.image}}is-invalid{{/if}}" type="file" id="image" name="image">
+    <div class="invalid-feedback">
+      {{errors.image}}
+    </div>
+  </div>
+  
+   <div class="mb-3">
+    <label for="username" class="form-label">Username</label>
+    <input 
+      type="text" 
+      class="form-control {{#if errors.username}}is-invalid{{/if}}" 
+      id="username" 
+      name="username" 
+      value="{{currentUser.username}}" 
+      required>
+    <div class="invalid-feedback">
+      {{errors.username}}
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label for="email" class="form-label">Email</label>
+    <input 
+      type="email" 
+      class="form-control {{#if errors.email}}is-invalid{{/if}}" 
+      id="email" 
+      name="email" 
+      value="{{currentUser.email}}" 
+      required>
+    <div class="invalid-feedback">
+      {{errors.email}}
+    </div>
+  </div>
+
+ 
+
+  <div class="mb-3">
+    <label for="favoriteAnimal" class="form-label">Favorite Animal</label>
+    <input 
+      type="text" 
+      class="form-control {{#if errors.favoriteAnimal}}is-invalid{{/if}}" 
+      id="favoriteAnimal" 
+      name="favoriteAnimal" 
+      value="{{currentUser.favoriteAnimal}}" 
+      required>
+    <div class="invalid-feedback">
+      {{errors.favoriteAnimal}}
+    </div>
+  </div>
+
+  
+
+  <button class="btn btn-primary" type="submit" style=" padding:7px 20px 7px 20px; border-radius: 25px;">Save</button>
+</form>
+
+<a href="/profile" class="btn btn-secondary my-3" style=" padding:7px 20px 7px 20px; border-radius: 25px;">Go back</a>
+
+</div>

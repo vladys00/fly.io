@@ -1,0 +1,117 @@
+{{!-- <iframe  src="http://127.0.0.1:4403/index.html" width="900px" height="900px"/>
+
+ --}}
+
+
+
+<head>
+     <link rel="stylesheet" href="/dodo-GAME/assets/css/styles.css" />
+     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+
+    <div class="container">
+      <div id="counter">
+        <h2>Points:</h2>
+        <p id="counter-num">0</p>
+      </div>
+      <div id="game-board"></div>
+      <div id="game-over">
+        <p>You scored: <span id="finalScore">0</span> points</p>
+        <h1>GAME OVER!!</h1>
+        <a href="/play" id="play-again">Play-again</a>
+        <div id="game-over-btns">
+        <a class="links" href="/">Go home</a>
+        <a class="links" href="/top-score">Check the top ten !!</a>
+
+        </div>
+      </div>
+
+      <div id="questionBox">
+        <img id="img-div" alt="question image" />
+        <!-- in the src we put a varibale  -->
+        <form id="form">
+          <p>Choose the correct answer:</p>
+          <label>
+            <select name="answer" id="answer">
+              <option value="A">A</option>
+              <option value="B">B</option>
+              <option value="C">C</option>
+              <option value="D">D</option>
+            </select>
+          </label>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+    <div id="correct-answer">
+      <p>Correct answer!!</p>
+    </div>
+    <div id="incorrect-answer">
+      <p>Incorrect answer :(</p>
+    </div>
+    <div id="game-description">
+        <div class="parragraph">
+
+            <p>
+                Somewhere in the 1600s… Hello, my fellow dodo! Welcome back to our home, the island of Mauritius! It is so absolutely beautifull here, I know you cannot wait to start exploring, but before read the followings:
+            </p>
+            <img
+                src="/dodo-GAME/assets/img/keys.png"
+                alt="keys img"
+              />
+        </div>
+      <div>
+        <div class="descriptions">
+          <ul>
+            <h2>Avoid your enemies</h2>
+            <li><img src="/dodo-GAME/assets/img/pig.gif" alt="crab gif" /></li>
+            <li><img src="/dodo-GAME/assets/img/rat.gif" alt="rat gif" /></li>
+            <li><img src="/dodo-GAME/assets/img/pirate.gif" alt="pirate gif" /></li>
+          </ul>
+        </div>
+        <div class="descriptions">
+          <ul>
+            <h2>Get some poits with</h2>
+            <li><img src="/dodo-GAME/assets/img/nut.png" alt="nut image" /></li>
+            <li><img src="/dodo-GAME/assets/img/rock2.png" alt="rock image" /></li>
+          </ul>
+        </div>
+        <div class="descriptions">
+          <ul>
+            <h2>And some magic with</h2>
+            <li><img src="/dodo-GAME/assets/img/crab.gif" alt="crab gif" /></li>
+            <li><img src="/dodo-GAME/assets/img/snail.gif" alt="snail gif" /></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <button id="start-btn">Start Game!</button>
+    
+    
+    <script src="/dodo-GAME/assets/js/models/questions/dataQuestions.js"></script>
+    <script src="/dodo-GAME/assets/js/constant.js"></script>
+    <script src="/dodo-GAME/assets/js/models/game.js"></script>
+    <script src="/dodo-GAME/assets/js/models/background.js"></script>
+    <script src="/dodo-GAME/assets/js/models/enemies/enemy.js"></script>
+    <script src="/dodo-GAME/assets/js/models/enemies/enemyRat.js"></script>
+    <script src="/dodo-GAME/assets/js/models/enemies/enemyPig.js"></script>
+    <script src="/dodo-GAME/assets/js/models/slowSnail.js"></script>
+    <script src="/dodo-GAME/assets/js/models/powerCrab.js"></script>
+    <script src="/dodo-GAME/assets/js/models/rockPoints.js"></script>
+    <script src="/dodo-GAME/assets/js/models/nutPoints.js"></script>
+    <script src="/dodo-GAME/assets/js/models/questions/livecounter.js"></script>
+    <script src="/dodo-GAME/assets/js/models/player.js"></script>
+    <script src="/dodo-GAME/assets/js/models/questions/questionBox.js"></script>
+    <script src="/dodo-GAME/assets/js/models/questions/question.js"></script>
+    <script src="/dodo-GAME/assets/js/main.js"></script>
+
+    
+    <audio src="/dodo-GAME/assets/soundEffects/blip.mp3" id="points-sound"></audio>
+    <audio src="/dodo-GAME/assets/soundEffects/game-over.mp3" id="game-over_sound"></audio>
+    <audio src="/dodo-GAME/assets/soundEffects/game-start.mp3" id="game-start"></audio>
+    <audio src="/dodo-GAME/assets/soundEffects/power-up.mp3" id="power-up"></audio>
+    <audio src="/dodo-GAME/assets/soundEffects/backgourndMusic.mp3" id="backgroundMusic"></audio>
+    <audio src="/dodo-GAME/assets/soundEffects/right-answer.mp3"id="right-answer"></audio>
+    <audio src="/dodo-GAME/assets/soundEffects/wrong-answer.mp3" id="wrong-answer"></audio>
+    <audio src="/dodo-GAME/assets/soundEffects/enemyHit.mp3" id="enemy-hit"></audio> 

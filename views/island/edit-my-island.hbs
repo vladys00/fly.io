@@ -1,0 +1,61 @@
+{{!-- <head>
+  <link rel="stylesheet" href="/styles/home-page.css" />
+</head> --}}
+
+
+
+<body
+  style="background-image: url('/images/island.themes/{{island.theme}}.jpg');  background-repeat: no-repeat;
+    
+    background-size: cover;"
+>
+<div class="container mt-4 p-4" style="background-color: rgba(0, 0, 0, 0.6); border-radius:16px;">
+<h1 style="color: white;">Edit my island:</h1>
+<form action="/my-island/:id/edit" method="post">
+  <div class="mb-3">
+    <label class="form-label" style="font-size: 25px; font-weight:bold; color: white;">Guardian:</label>
+  <p style="font-size: 25px; font-weight:bold; color: white;" class="form-label" >{{currentUser.username}}</p>
+  </div>
+  <div class="mb-3">
+    <label for="name" class="form-label">Island Name</label>
+    <input 
+      type="text" 
+      class="form-control {{#if errors.name}}is-invalid{{/if}}" 
+      id="name" 
+      name="name" 
+      value="{{island.name}}" 
+      required>
+    <div class="invalid-feedback">
+      {{errors.name}}
+    </div>
+  </div>
+
+
+  <div class="mb-3">
+    <label for="theme" class="form-label">Island Theme</label>
+    <select 
+      class="form-select {{#if errors.theme}}is-invalid{{/if}}" 
+      id="theme" 
+      name="theme" 
+      required>
+      <option value="" disabled selected>Select a theme</option>
+      <option value="Moriss Nest" >Moriss Nest</option>
+      <option value="Tamatave Tropics" >Tamatave Tropics</option>
+      <option value="Pamplemousse Palms" >Pamplemousse Palms</option>
+      <option value="FlicFlac Bay" >FlicFlac Bay</option>
+    </select>
+    <div class="invalid-feedback">
+      {{errors.theme}}
+    </div>
+  </div>
+
+
+
+  <button class="btn btn-primary" type="submit">Save</button>
+</form>
+
+
+</div>
+
+</body>
+

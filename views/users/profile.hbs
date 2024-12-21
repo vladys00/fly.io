@@ -1,0 +1,89 @@
+<head>
+  <link rel="stylesheet" href="/styles/home-page.css" />
+</head>
+
+<div class="container p-4" style="border: 2px solid rgba(81, 79, 79, 0.461) ; border-radius: 15px; ">
+  <!-- Profile Header (without profile image for now) -->
+  <div class="row text-center mb-4">
+    <div class="col-12">
+      <img src="{{currentUser.image}}"
+           alt="{{currentUser.username}}'s Profile" class="rounded-circle img-fluid" style="width: 150px; height: 150px;">
+      <h1 class="mt-3">{{currentUser.username}}</h1>
+    </div>
+  </div>
+
+  <!-- Profile Information Cards -->
+  <div class="row">
+    <!-- Email Section -->
+    <div class="col-md-6 mb-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Email</h5>
+          <p class="card-text">{{currentUser.email}}</p>
+          
+        </div>
+      </div>
+    </div>
+
+    <!-- Password Section -->
+    <div class="col-md-6 mb-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Password</h5>
+          <p class="card-text">●●●●●●●●</p>
+         
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <!-- Highest Score Section -->
+    <div class="col-md-6 mb-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">My Highest Score</h5>
+          <p class="card-text">{{currentUser.highestScore}}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Favorite Animal Section -->
+    <div class="col-md-6 mb-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Favorite Animal</h5>
+          <p class="card-text">{{currentUser.favoriteAnimal}}</p>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <!-- Island Section -->
+    <div class="col-md-6 mb-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">My Island</h5>
+          <p class="card-text">
+            {{#if island}}
+              {{island.name}}
+            {{else}}
+              Create your own Dodo island today!
+            {{/if}}
+          </p>
+          
+        </div>
+      </div>
+    </div>
+
+    <!-- Edit Profile Button -->
+    <div class="row">
+      <div class="d-flex align-items-center justify-content-center">
+
+          <a href="/profile-edit" class="btn btn-info btn-lg" style=" padding:7px 20px 7px 20px; border-radius: 25px;">Edit Profile</a>
+      </div>
+    </div>
+  </div>
+</div>

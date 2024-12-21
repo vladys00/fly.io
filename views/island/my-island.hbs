@@ -1,0 +1,76 @@
+<head>
+  <link rel="stylesheet" href="/styles/my-island.css" />
+</head>
+
+<body
+  style="background-image: url('/images/island.themes/{{island.theme}}.jpg');"
+>
+  <div class="container mt-4">
+    <div
+      class="card p-3"
+      style="width:fit-content; padding: 4px; background-color: rgba(0, 0, 0, 0.6); color:white; border-radius: 30px;"
+    >
+      <h2>Welcome to {{island.name}}</h2>
+    </div>
+
+    <div
+      class="card my-3 p-2"
+      style="width: 18rem; background-color: rgba(0, 0, 0, 0.6); color:white; border-radius: 25px;"
+    >
+      <div class="card-body">
+        <h5 class="card-title">Guardian:{{currentUser.username}}</h5>
+        <h5 class="card-title">Theme:{{island.theme}}</h5>
+        <p class="card-text"></p>
+      </div>
+    </div>
+
+    <div
+      class="card my-3"
+      style="width: 18rem; background-color: rgba(0, 0, 0, 0.6); color:white; border-radius: 25px;"
+    >
+      <div class="card-body">
+        <p>Creatures:</p>
+        {{#if creatures}}
+          <ul>
+            {{#each creatures as |creature|}}
+              <li>{{creature.commonName}} </li>
+            {{/each}}
+          </ul>
+          <a href="/creature/edit-my" class="btn btn-secondary" style="border-radius:23px;  padding: 5px 15px 5px 15px;">Edit my
+            creatures!</a>
+        {{else}}
+          <a
+            href="/creature/list"
+            class="btn btn-secondary"
+            style="border-radius:23px"
+          >Add some creatures!</a>
+        {{/if}}
+
+      </div>
+    </div>
+
+    <a
+      href="/my-island/{{currentUser.id}}/edit"
+      class="btn btn-primary"
+      style="border-radius:23px; font-size:20px; padding: 10px 20px 10px 20px;"
+    >Edit my island</a>
+
+    {{#each creatures as |creature|}}
+      <img
+        src="/images/creatures/{{creature.commonName}}.png"
+        alt="{{creature.commonName}}"
+        class="creature"
+        style=" width:70px; position: absolute; {{randomPosition
+          800
+          600
+          320
+          43
+          50
+        }}"
+      />
+    {{/each}}
+
+
+
+  </div>
+</body>

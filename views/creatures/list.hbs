@@ -1,0 +1,44 @@
+<head>
+  <link rel="stylesheet" href="/styles/home-page.css" />
+</head>
+
+<div
+  class="container mt-4 p-5"
+  style="background-color: rgba(0, 0, 0, 0.6); border-radius: 16px;"
+>
+  <h1 style="text-align: center; color:white; font-size:50px;">Explore our creatures!!</h1>
+
+  <div class="row row-cols-1 row-cols-md-2 g-4 my-3">
+    {{#each creatures}}
+      <div class="col">
+        <div
+          class="card"
+          style="border-radius: 16px; overflow:hidden; heigth: 400px; background-color: rgba(175, 255, 175, 0.551)"
+        >
+          <div class="d-flex align-items-center justify-content-center p-3">
+            <img
+              src="/images/creatures/{{this.commonName}}.png"
+              style="height: 200px; width:150px"
+              class="card-img-top"
+              alt="{{this.commonName}}"
+            />
+
+          </div>
+          <div class="card-body ms-3">
+            <h5 class="card-title">{{this.fictionalName}}</h5>
+            <p
+              class="card-text"
+            >{{this.commonName}}-{{this.class}}-{{this.conservationStatus}}</p>
+            <a
+              class="btn btn-primary"
+              href="/creature/detail/{{this.id}}"
+              style="border-radius: 16px;"
+            >See details</a>
+          </div>
+        </div>
+      </div>
+    {{/each}}
+
+  </div>
+
+</div>

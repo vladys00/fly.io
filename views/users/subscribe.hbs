@@ -1,0 +1,83 @@
+<body style="background-image: url('/images/subscribe.png');  background-size: cover; opacity: 0.8;">
+
+<div class="container mt-4 p-5"  style="border: 1px solid rgba(81, 79, 79, 0.461) ; border-radius: 15px; background-color: rgba(0, 0, 0, 0.6);">
+<form action="/subscribe" method="post" enctype="multipart/form-data">
+
+ <div class="mb-3">
+    <label for="image" class="form-label" style="color: white;">Imagen de perfil</label>
+    <input 
+    style="border-radius: 15px;"
+    class="form-control {{#if errors.image}}is-invalid{{/if}}" type="file" id="image" name="image" >
+    <div class="invalid-feedback">
+      {{errors.image}}
+    </div>
+  </div>
+
+<div class="mb-3">
+     <div class="mb-3">
+    <label for="username" class="form-label" style="color: white;">Username</label>
+    <input 
+    style="border-radius: 15px;"
+      type="text" 
+      class="form-control {{#if errors.username}}is-invalid{{/if}}" 
+      id="username" 
+      name="username" 
+      value="{{values.username}}" 
+      required>
+    <div class="invalid-feedback">
+      {{errors.username}}
+    </div>
+  </div>
+
+    <label for="email" class="form-label" style="color: white;">Email</label>
+    <input 
+    style="border-radius: 15px;"
+      type="email" 
+      class="form-control {{#if errors.email}}is-invalid{{/if}}" 
+      id="email" 
+      name="email" 
+      value="{{values.email}}" 
+      required>
+    <div class="invalid-feedback">
+      {{errors.email}}
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label for="password" class="form-label" style="color: white;">Password</label>
+    <input 
+    style="border-radius: 15px;"
+      type="password" 
+      class="form-control {{#if errors.password}}is-invalid{{/if}}" 
+      id="password" 
+      name="password" 
+      required>
+    <div class="invalid-feedback">
+      {{errors.password}}
+    </div>
+  </div>
+
+ 
+
+  <div class="mb-3">
+    <label for="favoriteAnimal" class="form-label" style="color: white;">Favorite Animal</label>
+    <input 
+    style="border-radius: 15px;"
+      type="text" 
+      class="form-control {{#if errors.favoriteAnimal}}is-invalid{{/if}}" 
+      id="favoriteAnimal" 
+      name="favoriteAnimal" 
+      value="{{values.favoriteAnimal}}" 
+      required>
+    <div class="invalid-feedback">
+      {{errors.favoriteAnimal}}
+    </div>
+  </div>
+
+
+
+  <button class="btn btn-info" type="submit" style=" padding:10px 30px 10px 30px; border-radius: 25px;">Submit</button>
+</form>
+
+</div>
+</body>

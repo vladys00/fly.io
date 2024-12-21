@@ -1,0 +1,22 @@
+<head>
+  <link rel="stylesheet" href="/styles/home-page.css" />
+</head>
+
+<div class="container mt-4">
+
+  <h1> My island has some cool creatures! check them out</h1>
+
+  <ul class="list-group my-3">
+    {{#each creatures as |creature|}}
+      <li
+        class="list-group-item d-flex align-items-center justify-content-between"
+      >
+        <span>{{creature.fictionalName}}</span>
+ <a class="btn btn-success" href="/creature/detail/{{creature.id}}" type="submit" style="border-radius:23px;  padding: 5px 15px 5px 15px;">See details</a>
+      </li>
+
+    {{/each}}
+
+  </ul>
+
+</div>

@@ -1,0 +1,43 @@
+{{!-- <h1>{{creature.commonName}} - {{creature.fictionalName}}</h1>
+
+<img src="{{creature.image}}" alt="{{creature.commonName}}" width="200" />
+<p><strong>Class:</strong> {{creature.class}}</p>
+<p><strong>Conservation Status:</strong> {{creature.conservationStatus}}</p>
+<p><strong>Intro:</strong> {{creature.intro}}</p>
+<p><strong>Found in:</strong> {{creature.places}}</p>
+<p><strong>Habitat:</strong> {{creature.habitats}}</p>
+
+<form action="/creature/addToMyIsland/{{creature._id}}" method="POST">
+  <button type="submit">Add to my island</button>
+</form>
+
+<a href="/creature/list">Back to list</a> --}}
+
+<div class="container mt-4">
+
+  <div class="d-flex flex-row card w-100 p-3" style="background-color: rgba(175, 255, 175, 0.551)">
+    <div style="width: 400px">
+      <img
+        src="/images/creatures/{{creature.commonName}}.png"
+        class="card-img-top"
+        alt="{{creature.commonName}}"
+      />
+    </div>
+
+    <div class="card-body w-50 p-5" >
+      <h2 class="card-title">{{creature.fictionalName}}</h2>
+      <p style="font-size: larger;"><strong>Common Name:</strong> {{creature.commonName}}</p>
+      <p style="font-size: larger;"><strong>Class:</strong> {{creature.class}}</p>
+      <p style="font-size: larger;"><strong>Conservation Status:</strong>
+        {{creature.conservationStatus}}</p>
+      <p style="font-size: larger;"><strong>Intro:</strong> {{creature.intro}}</p>
+      <p style="font-size: larger;"><strong>Found in:</strong> {{creature.places}}</p>
+      <p style="font-size: larger;"><strong>Habitat:</strong> {{creature.habitats}}</p>
+
+      <form action="/creature/addToMyIsland/{{creature._id}}" method="POST">
+        <button class="btn btn-primary" type="submit" style=" padding:10px 30px 10px 30px; border-radius: 25px;">Add to my island</button>
+      </form>
+      <a class="btn btn-secondary my-3" href="/creature/list" style=" padding:10px 30px 10px 30px; border-radius: 25px;">Back to list</a>
+    </div>
+  </div>
+</div>

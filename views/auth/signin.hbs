@@ -1,0 +1,40 @@
+
+<body style="background-image: url('/images/signin.png');  background-size: cover; opacity: 0.8;">
+
+<div class="container mt-4 p-4" style="border: 1px solid rgba(81, 79, 79, 0.461) ; border-radius: 15px; background-color: rgba(0, 0, 0, 0.6);">
+<form action="/signin" method="post">
+
+  <div class="mb-3">
+    <label for="email" class="form-label" style="color: white;">Email</label>
+    <input 
+      type="email" 
+      class="form-control {{#if errors.email}}is-invalid{{/if}}" 
+      id="email" 
+      name="email" 
+      value="{{values.email}}" 
+      style="border-radius: 15px;"
+      required>
+    <div class="invalid-feedback">
+      {{errors.email}}
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label for="password" class="form-label" style="color: white;">Password</label>
+    <input 
+      type="password" 
+      class="form-control {{#if errors.password}}is-invalid{{/if}}" 
+      id="password" 
+      name="password" 
+      style="border-radius: 15px;"
+      required>
+    <div class="invalid-feedback">
+      {{errors.password}}
+    </div>
+  </div>
+
+  <button class="btn btn-info" type="submit" style=" padding:10px 30px 10px 30px; border-radius: 25px;">Login</button>
+</form>
+
+</div>
+</body>

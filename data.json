@@ -1,0 +1,42 @@
+[
+  {
+    "fictionalName": "Lynxie",
+    "commonName": "Iberian Lynx",
+    "class": "Mammals",
+    "conservationStatus": "CR",
+    "intro": "Lynxie is a swift and agile feline, known for its iconic spotted coat and impressive leap. Its keen senses help it navigate the dense Iberian forests with ease.",
+    "places": "Iberian Peninsula, Spain, Portugal",
+    "habitats": "Dense forests, scrublands",
+    "image": "https://example.com/lynxie.png"
+  },
+  {
+    "fictionalName": "Wolfie",
+    "commonName": "Iberian Wolf",
+    "class": "Mammals",
+    "conservationStatus": "EN",
+    "intro": "Wolvie is a strong and resilient creature, often seen roaming the wild mountains and valleys. It has a distinctive howl and a deep connection to the rugged Iberian landscapes.",
+    "places": "Iberian Mountains, Spain, Portugal",
+    "habitats": "Forests, rocky terrains",
+    "image": "https://example.com/wolvie.png"
+  },
+  {
+    "fictionalName": "Bruin",
+    "commonName": "Iberian Brown Bear",
+    "class": "Mammals",
+    "conservationStatus": "VU",
+    "intro": "Bruin is a gentle giant, known for its thick fur and powerful stance. It navigates the dense forests and rivers, keeping a watchful eye on its surroundings.",
+    "places": "Northern Iberian Mountains, Spain, Portugal",
+    "habitats": "Forests, alpine meadows",
+    "image": "https://example.com/bruin.png"
+  },
+  {
+    "fictionalName": "Vultaire",
+    "commonName": "Griffon Vulture",
+    "class": "Birds",
+    "conservationStatus": "LC",
+    "intro": "Vultaire soars high in the sky, keeping an eye out for its next meal. Its impressive wingspan and keen vision make it an iconic sight across the Iberian landscapes.",
+    "places": "Open skies across Iberia",
+    "habitats": "Cliffs, open fields",
+    "image": "https://example.com/vultaire.png"
+  }
+]

@@ -1,0 +1,47 @@
+
+
+<div class="container mt-4">
+
+<form action="/island-form" method="post">
+  <div class="mb-3">
+    <label class="form-label">Guardian:</label>
+  <p class="form-label" >{{currentUser.username}}</p>
+  </div>
+  <div class="mb-3">
+    <label for="name" class="form-label">Island Name</label>
+    <input 
+      type="text" 
+      class="form-control {{#if errors.name}}is-invalid{{/if}}" 
+      id="name" 
+      name="name" 
+      value="{{values.name}}" 
+      required>
+    <div class="invalid-feedback">
+      {{errors.name}}
+    </div>
+  </div>
+
+
+  <div class="mb-3">
+    <label for="theme" class="form-label">Island Theme</label>
+    <select 
+      class="form-select {{#if errors.theme}}is-invalid{{/if}}" 
+      id="theme" 
+      name="theme" 
+      required>
+      <option value="" disabled {{#unless values.theme}}selected{{/unless}}>Select a theme</option>
+      <option value="Moriss Nest" >Moriss Nest</option>
+      <option value="Tamatave Tropics" >Tamatave Tropics</option>
+      <option value="Pamplemousse Palms" >Pamplemousse Palms</option>
+      <option value="FlicFlac Bay" >FlicFlac Bay</option>
+    </select>
+    <div class="invalid-feedback">
+      {{errors.theme}}
+    </div>
+  </div>
+
+
+
+  <button class="btn btn-info" type="submit">Create Island</button>
+</form>
+</div>

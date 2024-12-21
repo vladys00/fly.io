@@ -1,0 +1,27 @@
+
+<body
+  style="background-image: url('/images/island.themes/{{island.theme}}.jpg');  background-repeat: no-repeat;
+    
+    background-size: cover;"
+>
+<div class="container mt-4 p-4" style="background-color: rgba(0, 0, 0, 0.6); border-radius:16px;">
+  <h1 style="color: white;">Edit my creatures</h1>
+  <a href="/creature/list" class="btn btn-secondary" style="border-radius:23px;  padding: 5px 15px 5px 15px;">Add some more creatures!</a>
+  <ul class="list-group my-3">
+    {{#each creatures as |creature|}}
+      <li
+        class="list-group-item d-flex align-items-center justify-content-between"
+      >
+        <span>{{creature.commonName}}</span>
+   
+          <a class="btn btn-danger" href="/creatures/delete/{{creature.id}}" type="submit" style="border-radius:23px;  padding: 5px 15px 5px 15px;">Remove Creature</a>
+        
+      </li>
+
+    {{/each}}
+
+  </ul>
+
+</div>
+
+</body>

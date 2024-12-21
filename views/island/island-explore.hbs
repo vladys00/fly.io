@@ -1,0 +1,71 @@
+<head>
+  <link rel="stylesheet" href="/styles/my-island.css" />
+</head>
+
+<body
+  style="background-image: url('/images/island.themes/{{island.theme}}.jpg');"
+>
+  <div class="container mt-4">
+    <div
+      style="width:fit-content; padding: 6px; background-color: rgba(0, 0, 0, 0.6); color:white; border-radius: 16px;"
+    > <h1>Welcome to {{island.name}} island</h1> </div>
+
+    <div
+      class="card my-3"
+      style="width: 18rem; background-color: rgba(0, 0, 0, 0.6); color:white;"
+    >
+
+      <div class="card-body">
+        <h5 class="card-title">Guardian:{{guardian.username}}</h5>
+        <h5 class="card-title">Theme:{{island.theme}}</h5>
+        <p class="card-text"></p>
+      </div>
+    </div>
+
+    <div
+      class="card my-3"
+      style="width: 18rem; background-color: rgba(0, 0, 0, 0.6); color:white;"
+    >
+      <div class="card-body">
+        Creatures:
+
+        <ul>
+          {{#each creatures as |creature|}}
+            <li>{{creature.fictionalName}} </li>
+          {{/each}}
+        </ul>
+        {{#if creatures}}
+          {{#each creatures as |creature|}}
+            <img
+              src="/images/creatures/{{creature.commonName}}.png"
+              alt="{{creature.commonName}}"
+              class="creature"
+              style=" width:70px; position: absolute; {{randomPosition
+                800
+                600
+                320
+                43
+                50
+              }}"
+            />
+          {{/each}}
+          <a
+            href="/creature/creatures-explore/{{island.id}}"
+            class="btn btn-secondary"
+            style="border-radius:23px;  padding: 5px 15px 5px 15px;"
+          >Explore the creatures</a>
+        {{else}}
+          <a href="/creature/list" class="btn btn-secondary"
+          style="border-radius:23px;  padding: 5px 15px 5px 15px;">Soon there will be
+            some creatures</a>
+        {{/if}}
+
+      </div>
+    </div>
+
+  </div>
+
+  {{!-- {{#each creatures as |creature |}}
+    <img src="images/creatures/{{creature.commonName}}.jpg" alt="{{creature.commonName}}" class="creature" style=" width:70px; position: absolute; {{randomPosition 800 600 320 43 50}}">
+  {{/each}} --}}
+</body>
