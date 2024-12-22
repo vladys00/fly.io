@@ -1,5 +1,7 @@
 
 const mongoose = require("mongoose");
+require('dotenv').config();
+
 
 
 const DB_NAME = 'TDD'
@@ -7,7 +9,7 @@ const MONGO_URI = process.env.MONGODB_URI || "mongodb://127.0.0.1:27017";
 const CONNECTION_URI = `${MONGO_URI}/${DB_NAME}`
 
 mongoose
-  .connect(CONNECTION_URI)
+  .connect(process.env.MONGODB_URI)
   .then((x) => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`);
   })
