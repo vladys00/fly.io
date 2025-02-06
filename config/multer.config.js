@@ -1,5 +1,5 @@
 const cloudinary = require('cloudinary').v2;
-const CloudinaryStorage = require('multer-storage-cloudinary').CloudinaryStorage;
+const {CloudinaryStorage} = require('multer-storage-cloudinary');
 const multer = require('multer');
 
 cloudinary.config({
@@ -11,7 +11,7 @@ cloudinary.config({
   const storage = new CloudinaryStorage({
     cloudinary: cloudinary,
     params: {
-      folder: 'TDD_platform',
+      folder: 'TDD_platform-fly',
       allowedFormats: ['jpg', 'png', 'webp'],
     },
   });
