@@ -15,10 +15,14 @@ module.exports.list = (req, res, next) => {
 
 module.exports.detail = (req, res, next) => {
   const { id } = req.params;
-  Creature.findById(id)
-    .then((creature) => {
-      res.render("creatures/details", { creature }); //show the deatils of this creature
-    })
+  Island.findOne({ guardian: req.currentUser._id })
+  .then((island)=>{
+  return Creature.findById(id)
+  .then((creature) => {
+    res.render("creatures/details", { creature, island }); //show the deatils of this creature
+  })
+  })
+  
     .catch((err) => next(err));
 };
 

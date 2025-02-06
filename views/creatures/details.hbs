@@ -35,7 +35,12 @@
       <p style="font-size: larger;"><strong>Habitat:</strong> {{creature.habitats}}</p>
 
       <form action="/creature/addToMyIsland/{{creature._id}}" method="POST">
-        <button class="btn btn-primary" type="submit" style=" padding:10px 30px 10px 30px; border-radius: 25px;">Add to my island</button>
+      {{#if island}}
+      <button class="btn btn-primary" type="submit" style=" padding:10px 30px 10px 30px; border-radius: 25px;">Add to my island</button>
+      {{else}}
+        <a class="btn btn-primary" href="/island-form" style=" padding:10px 30px 10px 30px; border-radius: 25px;">Create an island first</a>
+      
+      {{/if}}
       </form>
       <a class="btn btn-secondary my-3" href="/creature/list" style=" padding:10px 30px 10px 30px; border-radius: 25px;">Back to list</a>
     </div>
